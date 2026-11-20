@@ -1,0 +1,13 @@
+@SimpleService_HostAddress = http://localhost:5095
+
+### Check API liveness
+GET {{SimpleService_HostAddress}}/health
+Accept: application/json
+
+### Read the development OpenAPI document
+GET {{SimpleService_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+### Check the Problem Details response for an unknown route
+GET {{SimpleService_HostAddress}}/does-not-exist
+Accept: application/problem+json
